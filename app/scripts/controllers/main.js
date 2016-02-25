@@ -15,8 +15,15 @@ angular.module('jejuApp')
       'AngularJS',
       'Karma'
     ];
-    $scope.onSwipeRight = function(){
-        window.alert('GOOD!');
-        console.log('NICE!');
+    $scope.currentSlide=0;
+    $scope.moveRight = function(){
+        if($scope.currentSlide != 3){
+            $scope.currentSlide++;
+        }
     };
+    $scope.moveLeft = function(){
+        if($scope.currentSlide != 0){
+            $scope.currentSlide--;
+        }
+    }
   });

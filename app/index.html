@@ -93,11 +93,14 @@
                 </div>
             </div>
         </md-content>
-        <md-content md-swipe-right="onSwipeRight()" ng-controller="MainCtrl" flex layout="row" class="main-content-xs">
-            <div  flex-xs="100" class="item1"></div>
-            <div hide flex-xs="100" class="item2"></div>
-            <div hide flex-xs="100" class="item3"></div>
-            <div hide flex-xs="100" class="item4"></div>
+        <md-content hide-gt-xs show-xs md-swipe-right="onSwipeRight()" ng-controller="MainCtrl" flex layout="row" class="main-content-xs">
+            <div md-swipe-left="moveRight()" md-swipe-right="moveLeft()" class="item-slider"
+            ng-class="{moveRight1:currentSlide==1,moveRight2:currentSlide==2,moveRight3:currentSlide==3}">
+                <div class="item1-xs"></div>
+                <div class="item2-xs"></div>
+                <div class="item3-xs"></div>
+                <div class="item4-xs"></div>
+            </div>
         </md-content>
 
         <md-bottom-sheet class="main-footer">
@@ -131,6 +134,7 @@
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-material/angular-material.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
